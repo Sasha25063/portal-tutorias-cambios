@@ -1,0 +1,59 @@
+name: Solicitud de cambio
+description: Registrar una solicitud formal de cambio para su evaluación
+title: "[CAMBIO] "
+labels: ["solicitud-de-cambio"]
+body:
+  - type: markdown
+    attributes:
+      value: Complete los datos del solicitante. Lo demás se registra en comentarios.
+  - type: input
+    id: componente
+    attributes:
+      label: Sistema o componente afectado
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de cambio
+      options:
+        - Correctivo
+        - Adaptativo
+        - Mejora
+        - Preventivo
+    validations:
+      required: true
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad propuesta
+      options:
+        - Alta
+        - Media
+        - Baja
+      default: 1
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción del cambio
+    validations:
+      required: true
+  - type: textarea
+    id: justificacion
+    attributes:
+      label: Justificación
+    validations:
+      required: true
+  - type: textarea
+    id: riesgos
+    attributes:
+      label: Impacto y riesgos conocidos (estimación inicial)
+  - type: checkboxes
+    id: confirmacion
+    attributes:
+      label: Confirmación
+      options:
+        - label: Verifiqué que no existe una solicitud duplicada
+          required: true
